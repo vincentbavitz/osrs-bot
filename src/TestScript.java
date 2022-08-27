@@ -47,6 +47,8 @@ public class TestScript extends AbstractScript {
 
     @Override
     public int onLoop() {
+        MethodProvider.log(getState().toString());
+
         Player player = getLocalPlayer();
 
         switch (getState()) {
