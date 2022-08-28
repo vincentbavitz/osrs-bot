@@ -36,19 +36,16 @@ public class TestScript extends AbstractScript {
     private State getState() {
         if (Inventory.isFull()) {
             return State.BANK;
-        }
-
-        if (Inventory.isEmpty()) {
+        } else {
             return State.CHOP;
         }
 
-        return State.WAIT;
+//        return State.WAIT;
     }
 
     @Override
     public int onLoop() {
         MethodProvider.log(getState().toString());
-
         Player player = getLocalPlayer();
 
         switch (getState()) {
@@ -72,7 +69,7 @@ public class TestScript extends AbstractScript {
                 break;
         }
 
-        return Calculations.random(300, 900);
+        return Calculations.random(200, 400);
 
     }
 }
